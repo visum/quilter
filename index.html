@@ -2,15 +2,41 @@
 <html>
   <head>
     <title>Quilter</title>
+    <style>
+      #input-canvas {
+        max-width: 500px;
+        max-height: 300px;
+      }
+
+      #form {
+        display: flex;
+      }
+    </style>
   </head>
   <body>
     <div id="container">
-      <input type="file" id="file-selector" /><br />
-      <canvas id="input" style="width: 50%; height: 50%"
+      <div id="form">
+        <div id="form-left">
+          <input type="file" id="file-selector" /><br />
+          <label
+            >Sample size:
+            <input type="number" min="5" max="200" value="50" id="sample-size"
+          /></label>
+          <div id="stats">
+            Input size: <span id="input-size"></span><br />
+            Aspect Ratio: <span id="aspect-ratio"></span><br />
+            Hexagons: <span id="hexagon-total"></span><br />
+          </div>
+        </div>
+        <div id="form-right">
+          <canvas id="input-canvas"
+            >You need canvas to use this awesome software.</canvas
+          >
+        </div>
+      </div>
+      <canvas id="output-canvas"
         >You need canvas to use this awesome software.</canvas
       >
-      <br />
-      <canvas id="output">You need canvas to use this awesome software.</canvas>
     </div>
     <script type="module" src="./index.js"></script>
   </body>
